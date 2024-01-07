@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+class  static_type{
+    static int i;
+
+    public:
+    static void init(int x) {i = x;}
+    void show (){cout << i << std::endl;}
+};
+
+int static_type::i;     //define
+
+int main()
+{
+    // init static data before object creation
+    static_type::init(100);
+
+    static_type x;
+    x.show();
+
+    return 0;
+}
